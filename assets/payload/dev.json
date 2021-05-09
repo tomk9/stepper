@@ -1,0 +1,86 @@
+[
+  {
+    "id": "hello-component",
+    "type": "static_component_one"
+  },
+  {
+    "id": "introduction-component",
+    "type": "text_component",
+    "props": {
+      "text": "text which should i see in app"
+    }
+  },
+  {
+    "id": "details-component",
+    "type": "text_component",
+    "props": {
+      "text": "text which should i see in app",
+      "visible": false
+    }
+  },
+  {
+    "id": "form-builder-component",
+    "type": "form_builder_component",
+    "props": {
+      "fields": [
+        {
+          "key": "liked-colors",
+          "type": "checkbox-group",
+          "label": "Jakie kolory lubisz? ",
+          "props": {
+            "options": [
+              {
+                "label": "Niebieski",
+                "value": "blue"
+              },
+              {
+                "label": "Zielony",
+                "value": "green"
+              },
+              {
+                "label": "Czerwony",
+                "value": "red"
+              }
+            ]
+          },
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Jak masz na imię ?",
+          "value": "Na pewno nie Andrzej",
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "key": "gender",
+          "type": "select",
+          "label": "Płeć",
+          "props": {
+            "options": [
+              {
+                "label": "Mężczyzna",
+                "value": "men"
+              },
+              {
+                "label": "Kobieta",
+                "value": "women"
+              }
+            ]
+          },
+          "validation": {
+            "required": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "submit-component",
+    "type": "submit_component"
+  }
+]

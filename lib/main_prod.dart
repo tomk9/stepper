@@ -5,8 +5,8 @@ import 'package:stepper/src/common/runner/app_runner.dart';
 
 void main() {
   final appConfig = AppConfig(
-    flavor: AppFlavor.dev,
-    datasource: AppAsset.devPayload,
+    flavor: AppFlavor.prod,
+    datasource: AppAsset.prodPayload,
   );
   runApplication(appConfig);
 }

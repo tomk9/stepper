@@ -1,0 +1,77 @@
+[
+  {
+    "id": "hello-component",
+    "type": "static_component_one"
+  },
+  {
+    "id": "introduction-component",
+    "type": "text_component",
+    "props": {
+      "text": "Production text"
+    }
+  },
+  {
+    "id": "form-builder-component",
+    "type": "form_builder_component",
+    "props": {
+      "fields": [
+        {
+          "key": "gender",
+          "type": "select",
+          "label": "Płeć",
+          "props": {
+            "options": [
+              {
+                "label": "Mężczyzna",
+                "value": "men"
+              },
+              {
+                "label": "Kobieta",
+                "value": "women"
+              }
+            ]
+          },
+          "validation": {
+            "required": true
+          }
+        },
+        {
+          "key": "name",
+          "type": "text",
+          "label": "Jak masz na imię ?",
+          "validation": {
+            "required": false
+          }
+        },
+        {
+          "key": "liked-colors",
+          "type": "checkbox-group",
+          "label": "Jakie kolory lubisz? ",
+          "props": {
+            "options": [
+              {
+                "label": "Niebieski",
+                "value": "blue"
+              },
+              {
+                "label": "Zielony",
+                "value": "green"
+              },
+              {
+                "label": "Czerwony",
+                "value": "red"
+              }
+            ]
+          },
+          "validation": {
+            "required": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "submit-component",
+    "type": "submit_component"
+  }
+]
