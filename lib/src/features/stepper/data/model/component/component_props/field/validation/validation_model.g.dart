@@ -8,7 +8,7 @@ part of 'validation_model.dart';
 
 ValidationModel _$ValidationModelFromJson(Map<String, dynamic> json) {
   return ValidationModel(
-    required: json['required'] as bool?,
+    required: json['required'] as bool,
   );
 }
 

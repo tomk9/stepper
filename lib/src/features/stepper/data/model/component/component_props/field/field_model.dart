@@ -8,18 +8,20 @@ part 'field_model.g.dart';
 @JsonSerializable()
 class FieldModel {
   const FieldModel({
-    this.key,
-    this.type,
-    this.label,
+    required this.key,
+    required this.type,
+    required this.label,
+    required this.validation,
     this.props,
-    this.validation,
+    this.value,
   });
 
-  final String? key;
-  final FieldType? type;
-  final String? label;
+  final String key;
+  final FieldType type;
+  final String label;
+  final ValidationModel validation;
   final FieldPropsModel? props;
-  final ValidationModel? validation;
+  final String? value;
 
   factory FieldModel.fromJson(Map<String, dynamic> json) =>
       _$FieldModelFromJson(json);

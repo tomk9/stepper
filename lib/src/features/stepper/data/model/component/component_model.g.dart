@@ -8,8 +8,8 @@ part of 'component_model.dart';
 
 ComponentModel _$ComponentModelFromJson(Map<String, dynamic> json) {
   return ComponentModel(
-    id: json['id'] as String?,
-    type: _$enumDecodeNullable(_$ComponentTypeEnumMap, json['type']),
+    id: json['id'] as String,
+    type: _$enumDecode(_$ComponentTypeEnumMap, json['type']),
     props: json['props'] == null
         ? null
         : ComponentPropsModel.fromJson(json['props'] as Map<String, dynamic>),
@@ -47,17 +47,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$ComponentTypeEnumMap = {

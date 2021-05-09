@@ -5,10 +5,10 @@ part 'validation_model.g.dart';
 @JsonSerializable()
 class ValidationModel {
   const ValidationModel({
-    this.required,
+    required this.required,
   });
 
-  final bool? required;
+  final bool required;
 
   factory ValidationModel.fromJson(Map<String, dynamic> json) =>
       _$ValidationModelFromJson(json);

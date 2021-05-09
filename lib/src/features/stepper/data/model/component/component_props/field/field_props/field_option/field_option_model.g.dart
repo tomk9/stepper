@@ -8,8 +8,8 @@ part of 'field_option_model.dart';
 
 FieldOptionModel _$FieldOptionModelFromJson(Map<String, dynamic> json) {
   return FieldOptionModel(
-    label: json['label'] as String?,
-    value: json['value'] as String?,
+    label: json['label'] as String,
+    value: json['value'] as String,
   );
 }
 

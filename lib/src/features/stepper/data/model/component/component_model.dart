@@ -9,13 +9,13 @@ part 'component_model.g.dart';
 @JsonSerializable()
 class ComponentModel {
   const ComponentModel({
-    this.id,
-    this.type,
+    required this.id,
+    required this.type,
     this.props,
   });
 
-  final String? id;
-  final ComponentType? type;
+  final String id;
+  final ComponentType type;
   final ComponentPropsModel? props;
 
   factory ComponentModel.fromJson(Map<String, dynamic> json) =>

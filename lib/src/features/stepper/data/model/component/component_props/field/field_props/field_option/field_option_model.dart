@@ -5,12 +5,12 @@ part 'field_option_model.g.dart';
 @JsonSerializable()
 class FieldOptionModel {
   const FieldOptionModel({
-    this.label,
-    this.value,
+    required this.label,
+    required this.value,
   });
 
-  final String? label;
-  final String? value;
+  final String label;
+  final String value;
 
   factory FieldOptionModel.fromJson(Map<String, dynamic> json) =>
       _$FieldOptionModelFromJson(json);
