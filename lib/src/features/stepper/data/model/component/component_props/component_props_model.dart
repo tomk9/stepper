@@ -8,10 +8,12 @@ class ComponentPropsModel {
   const ComponentPropsModel({
     this.fields,
     this.text,
+    this.visible,
   });
 
   final List<FieldModel>? fields;
   final String? text;
+  final bool? visible;
 
   factory ComponentPropsModel.fromJson(Map<String, dynamic> json) =>
       _$ComponentPropsModelFromJson(json);

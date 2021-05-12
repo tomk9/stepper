@@ -23,4 +23,7 @@ class FormBuilderComponentEntity extends ComponentEntity {
                   .toList() ??
               [],
         );
+
+  @override
+  List<Object?> get props => [id, fields];
 }

@@ -12,6 +12,7 @@ ComponentPropsModel _$ComponentPropsModelFromJson(Map<String, dynamic> json) {
         ?.map((e) => FieldModel.fromJson(e as Map<String, dynamic>))
         .toList(),
     text: json['text'] as String?,
+    visible: json['visible'] as bool?,
   );
 }
 
@@ -20,4 +21,5 @@ Map<String, dynamic> _$ComponentPropsModelToJson(
     <String, dynamic>{
       'fields': instance.fields,
       'text': instance.text,
+      'visible': instance.visible,
     };

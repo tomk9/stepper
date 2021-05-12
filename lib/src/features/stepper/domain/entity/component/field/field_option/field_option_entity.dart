@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:stepper/src/features/stepper/data/model/component/component_props/field/field_props/field_option/field_option_model.dart';
 
-class FieldOptionEntity {
+class FieldOptionEntity extends Equatable {
   const FieldOptionEntity({
     required this.label,
     required this.value,
@@ -15,4 +16,7 @@ class FieldOptionEntity {
           label: fieldOptionModel.label,
           value: fieldOptionModel.value,
         );
+
+  @override
+  List<Object?> get props => [label, value];
 }

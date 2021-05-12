@@ -30,4 +30,7 @@ class TextFieldEntity extends FieldEntity {
           validation: ValidationEntity.fromModel(fieldModel.validation),
           value: fieldModel.value,
         );
+
+  @override
+  List<Object?> get props => [key, label, validation, value];
 }

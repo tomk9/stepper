@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:stepper/src/features/stepper/data/model/component/component_model.dart';
 import 'package:stepper/src/features/stepper/data/model/component/component_type/component_type.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/form_builder_component_entity.dart';
@@ -5,7 +6,7 @@ import 'package:stepper/src/features/stepper/domain/entity/component/static_comp
 import 'package:stepper/src/features/stepper/domain/entity/component/submit_component_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/text_component_entity.dart';
 
-class ComponentEntity {
+class ComponentEntity extends Equatable {
   const ComponentEntity({
     required this.id,
   });
@@ -26,4 +27,7 @@ class ComponentEntity {
         return SubmitComponentEntity.fromModel(componentModel);
     }
   }
+
+  @override
+  List<Object?> get props => [id];
 }

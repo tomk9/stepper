@@ -36,4 +36,7 @@ class CheckboxGroupFieldEntity extends FieldEntity {
                   .toList() ??
               [],
         );
+
+  @override
+  List<Object?> get props => [key, label, validation, fields];
 }

@@ -1,5 +1,6 @@
 import 'package:stepper/src/features/stepper/data/datasource/stepper_datasource.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/component_entity.dart';
+import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
 import 'package:stepper/src/features/stepper/domain/repository/stepper_repository.dart';
 
 class StepperRepositoryImpl implements StepperRepository {
@@ -13,5 +14,13 @@ class StepperRepositoryImpl implements StepperRepository {
   Future<List<ComponentEntity>> getComponentList() async {
     final componentList = await stepperDatasource.getComponentList();
     return componentList.map((e) => ComponentEntity.fromModel(e)).toList();
+  }
+
+  @override
+  Future<SubmitEntity> submit() async {
+    // TODO: Implement
+    return SubmitEntity(
+      fields: [],
+    );
   }
 }

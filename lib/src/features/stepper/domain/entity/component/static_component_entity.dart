@@ -14,4 +14,7 @@ class StaticComponentEntity extends ComponentEntity {
   ) : this(
           id: componentModel.id,
         );
+
+  @override
+  List<Object?> get props => [id];
 }
