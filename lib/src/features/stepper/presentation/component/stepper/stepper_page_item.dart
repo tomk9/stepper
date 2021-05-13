@@ -14,23 +14,28 @@ class StepperPageItem extends StatelessWidget {
   const StepperPageItem({
     Key? key,
     required this.component,
+    required this.pageController,
   }) : super(key: key);
 
   final ComponentEntity component;
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     if (component is StaticComponentEntity) {
       return StaticComponent(
         staticComponentEntity: component as StaticComponentEntity,
+        pageController: pageController,
       );
     } else if (component is TextComponentEntity) {
       return TextComponent(
         textComponentEntity: component as TextComponentEntity,
+        pageController: pageController,
       );
     } else if (component is FormBuilderComponentEntity) {
       return FormBuilderComponent(
         formBuilderComponentEntity: component as FormBuilderComponentEntity,
+        pageController: pageController,
       );
     } else if (component is SubmitComponentEntity) {
       return SubmitComponent(
