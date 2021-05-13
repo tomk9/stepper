@@ -17,8 +17,8 @@ class TextComponentEntity extends ComponentEntity {
     ComponentModel componentModel,
   ) : this(
           id: componentModel.id,
-          text: componentModel.props?.text ?? '',
-          visible: componentModel.props?.visible ?? true,
+          text: componentModel.componentProps?.text ?? '',
+          visible: componentModel.componentProps?.visible ?? true,
         );
 
   @override

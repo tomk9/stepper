@@ -16,7 +16,7 @@ class FormBuilderComponentEntity extends ComponentEntity {
     ComponentModel componentModel,
   ) : this(
           id: componentModel.id,
-          fields: componentModel.props?.fields
+          fields: componentModel.componentProps?.fields
                   ?.map(
                     (e) => FieldEntity.fromModel(e),
                   )

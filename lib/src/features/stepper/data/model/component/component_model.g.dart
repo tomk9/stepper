@@ -10,7 +10,7 @@ ComponentModel _$ComponentModelFromJson(Map<String, dynamic> json) {
   return ComponentModel(
     id: json['id'] as String,
     type: _$enumDecode(_$ComponentTypeEnumMap, json['type']),
-    props: json['props'] == null
+    componentProps: json['props'] == null
         ? null
         : ComponentPropsModel.fromJson(json['props'] as Map<String, dynamic>),
   );
@@ -20,7 +20,7 @@ Map<String, dynamic> _$ComponentModelToJson(ComponentModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$ComponentTypeEnumMap[instance.type],
-      'props': instance.props,
+      'props': instance.componentProps,
     };
 
 K _$enumDecode<K, V>(

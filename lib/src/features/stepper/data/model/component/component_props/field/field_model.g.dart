@@ -13,7 +13,7 @@ FieldModel _$FieldModelFromJson(Map<String, dynamic> json) {
     label: json['label'] as String,
     validation:
         ValidationModel.fromJson(json['validation'] as Map<String, dynamic>),
-    props: json['props'] == null
+    fieldProps: json['props'] == null
         ? null
         : FieldPropsModel.fromJson(json['props'] as Map<String, dynamic>),
     value: json['value'] as String?,
@@ -26,7 +26,7 @@ Map<String, dynamic> _$FieldModelToJson(FieldModel instance) =>
       'type': _$FieldTypeEnumMap[instance.type],
       'label': instance.label,
       'validation': instance.validation,
-      'props': instance.props,
+      'props': instance.fieldProps,
       'value': instance.value,
     };
 

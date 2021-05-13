@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'field_option_model.g.dart';
 
 @JsonSerializable()
-class FieldOptionModel {
+class FieldOptionModel extends Equatable {
   const FieldOptionModel({
     required this.label,
     required this.value,
@@ -16,4 +17,7 @@ class FieldOptionModel {
       _$FieldOptionModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$FieldOptionModelToJson(this);
+
+  @override
+  List<Object?> get props => [label, value];
 }

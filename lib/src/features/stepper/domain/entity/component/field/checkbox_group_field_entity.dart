@@ -29,7 +29,7 @@ class CheckboxGroupFieldEntity extends FieldEntity {
           key: fieldModel.key,
           label: fieldModel.label,
           validation: ValidationEntity.fromModel(fieldModel.validation),
-          fields: fieldModel.props?.options
+          fields: fieldModel.fieldProps?.options
                   ?.map(
                     (e) => FieldOptionEntity.fromModel(e),
                   )
