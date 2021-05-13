@@ -22,7 +22,7 @@ class FormBuilderField extends StatelessWidget {
     if (fieldEntity is SelectFieldEntity) {
       return FormSelectField(
         index: index,
-        selectFieldEntity: fieldEntity as SelectFieldEntity,
+        fieldEntity: fieldEntity as SelectFieldEntity,
       );
     } else if (fieldEntity is TextFieldEntity) {
       return FormTextField(

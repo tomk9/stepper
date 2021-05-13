@@ -36,7 +36,7 @@ class SubmitFieldEntity extends Equatable {
         key: fieldEntity.key,
         label: fieldEntity.label,
         required: fieldEntity.validation.required,
-        textValue: value?.first,
+        textValue: value?.first ?? fieldEntity.value,
       );
     } else if (fieldEntity is CheckboxGroupFieldEntity) {
       return CheckboxGroupSubmitFieldEntity(

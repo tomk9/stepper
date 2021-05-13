@@ -11,6 +11,17 @@ class GotStepperEvent extends StepperEvent {
   List<Object?> get props => [];
 }
 
+class SavedStepperEvent extends StepperEvent {
+  const SavedStepperEvent({
+    required this.submitEntity,
+  });
+
+  final SubmitEntity submitEntity;
+
+  @override
+  List<Object?> get props => [submitEntity];
+}
+
 class SubmittedStepperEvent extends StepperEvent {
   const SubmittedStepperEvent();
 

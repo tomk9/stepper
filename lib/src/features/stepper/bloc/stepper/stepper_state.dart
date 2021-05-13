@@ -49,11 +49,11 @@ class SubmittingStepperState extends StepperState {
 
 class SubmittedStepperState extends StepperState {
   const SubmittedStepperState({
-    required this.componentList,
+    required this.submitEntity,
   });
 
-  final List<ComponentEntity> componentList;
+  final SubmitEntity submitEntity;
 
   @override
-  List<Object> get props => [componentList];
+  List<Object> get props => [submitEntity];
 }

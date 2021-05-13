@@ -54,7 +54,9 @@ class _StepperPageState extends State<StepperPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => SummaryPage(),
+          builder: (context) => SummaryPage(
+            submitEntity: state.submitEntity,
+          ),
         ),
       );
     }

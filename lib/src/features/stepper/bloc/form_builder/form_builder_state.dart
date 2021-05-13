@@ -1,7 +1,7 @@
-part of 'form_bloc.dart';
+part of 'form_builder_bloc.dart';
 
-class FormState extends Equatable {
-  FormState({
+class FormBuilderState extends Equatable {
+  FormBuilderState({
     required this.submitEntity,
   }) : ready = _isReady(submitEntity);
 

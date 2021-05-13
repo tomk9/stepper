@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:stepper/src/features/stepper/bloc/form/form_bloc.dart';
+import 'package:stepper/src/features/stepper/bloc/form_builder/form_builder_bloc.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/field/text_field_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/field/submit_field_entity.dart';
+import 'package:stepper/src/features/stepper/presentation/component/stepper/component/form/asterisk.dart';
 
 class FormTextField extends StatefulWidget {
   const FormTextField({
@@ -33,7 +34,16 @@ class _FormTextFieldState extends State<FormTextField> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(widget.fieldEntity.label),
+        Row(
+          children: [
+            Flexible(
+              child: Text(
+                widget.fieldEntity.label,
+              ),
+            ),
+            if (widget.fieldEntity.validation.required) Asterisk(),
+          ],
+        ),
         TextFormField(
           controller: _textEditingController,
           onChanged: _onChanged,
@@ -43,8 +53,8 @@ class _FormTextFieldState extends State<FormTextField> {
   }
 
   void _onChanged(String value) {
-    context.read<FormBloc>().add(
-          ChangedFormEvent(
+    context.read<FormBuilderBloc>().add(
+          ChangedFormBuilderEvent(
             index: widget.index,
             submitFieldEntity: SubmitFieldEntity.fromFieldAndValue(
               widget.fieldEntity,

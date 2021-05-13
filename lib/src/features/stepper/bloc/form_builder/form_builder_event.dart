@@ -1,11 +1,11 @@
-part of 'form_bloc.dart';
+part of 'form_builder_bloc.dart';
 
-abstract class FormEvent extends Equatable {
-  const FormEvent();
+abstract class FormBuilderEvent extends Equatable {
+  const FormBuilderEvent();
 }
 
-class InitFormEvent extends FormEvent {
-  const InitFormEvent({
+class InitFormBuilderEvent extends FormBuilderEvent {
+  const InitFormBuilderEvent({
     required this.formBuilderComponentEntity,
   });
 
@@ -15,8 +15,8 @@ class InitFormEvent extends FormEvent {
   List<Object> get props => [formBuilderComponentEntity];
 }
 
-class ChangedFormEvent extends FormEvent {
-  const ChangedFormEvent({
+class ChangedFormBuilderEvent extends FormBuilderEvent {
+  const ChangedFormBuilderEvent({
     required this.index,
     required this.submitFieldEntity,
   });

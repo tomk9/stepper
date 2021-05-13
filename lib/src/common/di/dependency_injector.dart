@@ -4,6 +4,8 @@ import 'package:stepper/src/features/stepper/data/datasource/stepper_datasource.
 import 'package:stepper/src/features/stepper/data/datasource/stepper_datasource_asset.dart';
 import 'package:stepper/src/features/stepper/data/storage/form_storage.dart';
 import 'package:stepper/src/features/stepper/data/storage/form_storage_memory.dart';
+import 'package:stepper/src/features/stepper/data/storage/stepper_storage.dart';
+import 'package:stepper/src/features/stepper/data/storage/stepper_storage_memory.dart';
 import 'package:stepper/src/features/stepper/domain/repository/form/form_repository.dart';
 import 'package:stepper/src/features/stepper/domain/repository/form/form_repository_impl.dart';
 import 'package:stepper/src/features/stepper/domain/repository/stepper_repository.dart';
@@ -14,6 +16,7 @@ final getIt = GetIt.instance;
 void injectDependencies(
   AppConfig appConfig, {
   StepperDatasource? stepperDatasource,
+  StepperStorage? stepperStorage,
   StepperRepository? stepperRepository,
   FormStorage? formStorage,
   FormRepository? formRepository,
@@ -25,11 +28,14 @@ void injectDependencies(
           assetName: getIt.get<AppConfig>().datasource,
         ),
   );
-
+  getIt.registerSingleton<StepperStorage>(
+    stepperStorage ?? StepperStorageMemory(),
+  );
   getIt.registerSingleton<StepperRepository>(
     stepperRepository ??
         StepperRepositoryImpl(
           stepperDatasource: getIt.get<StepperDatasource>(),
+          stepperStorage: getIt.get<StepperStorage>(),
         ),
   );
   getIt.registerSingleton<FormStorage>(

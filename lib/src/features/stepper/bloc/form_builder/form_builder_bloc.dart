@@ -8,15 +8,15 @@ import 'package:stepper/src/features/stepper/domain/entity/submit/field/submit_f
 import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
 import 'package:stepper/src/features/stepper/domain/repository/form/form_repository.dart';
 
-part 'form_event.dart';
+part 'form_builder_event.dart';
 
-part 'form_state.dart';
+part 'form_builder_state.dart';
 
-class FormBloc extends Bloc<FormEvent, FormState> {
-  FormBloc({
+class FormBuilderBloc extends Bloc<FormBuilderEvent, FormBuilderState> {
+  FormBuilderBloc({
     required this.stepperBloc,
     required this.formRepository,
-  }) : super(FormState(
+  }) : super(FormBuilderState(
           submitEntity: SubmitEntity(
             fields: [],
           ),
@@ -26,28 +26,30 @@ class FormBloc extends Bloc<FormEvent, FormState> {
   final FormRepository formRepository;
 
   @override
-  Stream<FormState> mapEventToState(
-    FormEvent event,
+  Stream<FormBuilderState> mapEventToState(
+    FormBuilderEvent event,
   ) async* {
-    if (event is InitFormEvent) {
-      yield* _mapInitFormEventToState(event);
-    } else if (event is ChangedFormEvent) {
-      yield* _mapChangedFormEventToState(event);
+    if (event is InitFormBuilderEvent) {
+      yield* _mapInitFormBuilderEventToState(event);
+    } else if (event is ChangedFormBuilderEvent) {
+      yield* _mapChangedFormBuilderEventToState(event);
     }
   }
 
-  Stream<FormState> _mapInitFormEventToState(InitFormEvent event) async* {
+  Stream<FormBuilderState> _mapInitFormBuilderEventToState(
+      InitFormBuilderEvent event) async* {
     final submitEntity =
         formRepository.initForm(event.formBuilderComponentEntity.fields);
-    yield FormState(
+    yield FormBuilderState(
       submitEntity: submitEntity,
     );
   }
 
-  Stream<FormState> _mapChangedFormEventToState(ChangedFormEvent event) async* {
+  Stream<FormBuilderState> _mapChangedFormBuilderEventToState(
+      ChangedFormBuilderEvent event) async* {
     final submitEntity =
         formRepository.onChanged(event.index, event.submitFieldEntity);
-    yield FormState(
+    yield FormBuilderState(
       submitEntity: submitEntity,
     );
   }
