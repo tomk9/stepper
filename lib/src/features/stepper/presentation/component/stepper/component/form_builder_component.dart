@@ -22,7 +22,6 @@ class FormBuilderComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => FormBuilderBloc(
-        stepperBloc: context.read<StepperBloc>(),
         formRepository: getIt.get<FormRepository>(),
       )..add(
           InitFormBuilderEvent(

@@ -8,8 +8,8 @@ import 'package:stepper/src/features/stepper/data/storage/stepper_storage.dart';
 import 'package:stepper/src/features/stepper/data/storage/stepper_storage_memory.dart';
 import 'package:stepper/src/features/stepper/domain/repository/form/form_repository.dart';
 import 'package:stepper/src/features/stepper/domain/repository/form/form_repository_impl.dart';
-import 'package:stepper/src/features/stepper/domain/repository/stepper_repository.dart';
-import 'package:stepper/src/features/stepper/domain/repository/stepper_repository_impl.dart';
+import 'package:stepper/src/features/stepper/domain/repository/stepper/stepper_repository.dart';
+import 'package:stepper/src/features/stepper/domain/repository/stepper/stepper_repository_impl.dart';
 
 final getIt = GetIt.instance;
 

@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/component_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
-import 'package:stepper/src/features/stepper/domain/repository/stepper_repository.dart';
+import 'package:stepper/src/features/stepper/domain/repository/stepper/stepper_repository.dart';
 
 part 'stepper_event.dart';
 

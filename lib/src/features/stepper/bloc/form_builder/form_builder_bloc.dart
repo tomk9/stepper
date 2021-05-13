@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:stepper/src/features/stepper/bloc/stepper/stepper_bloc.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/form_builder_component_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/field/submit_field_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
@@ -14,7 +13,6 @@ part 'form_builder_state.dart';
 
 class FormBuilderBloc extends Bloc<FormBuilderEvent, FormBuilderState> {
   FormBuilderBloc({
-    required this.stepperBloc,
     required this.formRepository,
   }) : super(FormBuilderState(
           submitEntity: SubmitEntity(
@@ -22,7 +20,6 @@ class FormBuilderBloc extends Bloc<FormBuilderEvent, FormBuilderState> {
           ),
         ));
 
-  final StepperBloc stepperBloc;
   final FormRepository formRepository;
 
   @override

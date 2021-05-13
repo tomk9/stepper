@@ -4,22 +4,24 @@ import 'package:mocktail/mocktail.dart';
 import 'package:stepper/src/features/stepper/bloc/stepper/stepper_bloc.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/component_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
-import 'package:stepper/src/features/stepper/domain/repository/stepper_repository.dart';
+import 'package:stepper/src/features/stepper/domain/repository/stepper/stepper_repository.dart';
 import 'package:test/test.dart';
 
-import '../../domain/repository/stepper_repository.dart';
+import '../../domain/repository/stepper/stepper_repository.dart';
 
 void main() {
   late StepperRepository _stepperRepository;
   late List<ComponentEntity> _componentList;
   late Object _error;
   late SubmitEntity _submitEntity;
+
   setUp(() {
     _stepperRepository = MockStepperRepository();
     _componentList = [ComponentEntity(id: 'id')];
     _error = FlutterError('Unable to load asset');
     _submitEntity = SubmitEntity(fields: []);
   });
+
   group('StepperBloc', () {
     blocTest<StepperBloc, StepperState>(
       'emits [] when nothing is added',
