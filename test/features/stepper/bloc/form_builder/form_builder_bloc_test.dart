@@ -11,8 +11,8 @@ import '../../domain/repository/form/form_repository.dart';
 
 void main() {
   late FormRepository _formRepository;
-  late SubmitFieldEntity _submitFieldEntity;
   late FormBuilderComponentEntity _formBuilderComponentEntity;
+  late SubmitFieldEntity _submitFieldEntity;
   late SubmitEntity _submitEntity;
   late int _index;
 

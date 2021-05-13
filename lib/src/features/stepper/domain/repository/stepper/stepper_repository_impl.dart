@@ -1,5 +1,5 @@
 import 'package:stepper/src/features/stepper/data/datasource/stepper_datasource.dart';
-import 'package:stepper/src/features/stepper/data/storage/stepper_storage.dart';
+import 'package:stepper/src/features/stepper/data/storage/stepper/stepper_storage.dart';
 import 'package:stepper/src/features/stepper/domain/entity/component/component_entity.dart';
 import 'package:stepper/src/features/stepper/domain/entity/submit/submit_entity.dart';
 import 'package:stepper/src/features/stepper/domain/repository/stepper/stepper_repository.dart';
