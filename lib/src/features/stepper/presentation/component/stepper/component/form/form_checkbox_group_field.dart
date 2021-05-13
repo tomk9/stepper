@@ -40,7 +40,7 @@ class _FormCheckboxGroupFieldState extends State<FormCheckboxGroupField> {
         for (final field in widget.fieldEntity.fields)
           CheckboxListTile(
             value: _selectedValues.contains(
-              field.value,
+              field.label,
             ),
             title: Text(field.label),
             onChanged: (value) => _onChanged(value, field),
@@ -52,8 +52,8 @@ class _FormCheckboxGroupFieldState extends State<FormCheckboxGroupField> {
   void _onChanged(bool? value, FieldOptionEntity fieldOption) {
     setState(() {
       value == true
-          ? _selectedValues.add(fieldOption.value)
-          : _selectedValues.remove(fieldOption.value);
+          ? _selectedValues.add(fieldOption.label)
+          : _selectedValues.remove(fieldOption.label);
     });
     context.read<FormBuilderBloc>().add(
           ChangedFormBuilderEvent(

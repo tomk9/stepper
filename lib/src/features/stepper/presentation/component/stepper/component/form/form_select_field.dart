@@ -58,7 +58,7 @@ class _FormSelectFieldState extends State<FormSelectField> {
             index: widget.index,
             submitFieldEntity: SubmitFieldEntity.fromFieldAndValue(
               widget.fieldEntity,
-              {value?.value ?? ''},
+              {value?.label ?? ''},
             ),
           ),
         );

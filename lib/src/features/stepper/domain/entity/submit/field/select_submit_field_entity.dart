@@ -10,7 +10,7 @@ class SelectSubmitFieldEntity extends SubmitFieldEntity {
           key: key,
           label: label,
           required: required,
-          value: {textValue},
+          value: textValue == null ? null : {textValue},
         );
 
   @override

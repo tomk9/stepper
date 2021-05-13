@@ -12,7 +12,7 @@ class SummaryField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '${submitFieldEntity.label}: ${submitFieldEntity.value}',
+      '${submitFieldEntity.label}:${submitFieldEntity.value == null ? '' : ' ${submitFieldEntity.value?.join(', ')}'}',
     );
   }
 }
