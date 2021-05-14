@@ -30,6 +30,7 @@ class TextComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 32.0),
           child: ForwardButton(
+            key: Key(TextComponentKey.forwardButton),
             onPressed: _onPressed,
           ),
         ),
@@ -43,4 +44,8 @@ class TextComponent extends StatelessWidget {
       curve: Curves.easeInOut,
     );
   }
+}
+
+abstract class TextComponentKey {
+  static const forwardButton = 'FORWARD_BUTTON';
 }

@@ -25,5 +25,37 @@ void main() {
       final result = ComponentModel.fromJson(json);
       expect(result, componentModel);
     });
+    test('parseComponentList should create list of object', () {
+      final text = '''
+      [
+        {
+          "id": "hello-component",
+          "type": "static_component_one"
+        },
+        {
+          "id": "introduction-component",
+          "type": "text_component",
+          "props": {
+            "text": "text which should i see in app"
+          }
+        }
+      ]
+      ''';
+      final componentModelList = [
+        ComponentModel(
+          id: 'hello-component',
+          type: ComponentType.staticComponentOne,
+        ),
+        ComponentModel(
+          id: 'introduction-component',
+          type: ComponentType.textComponent,
+          componentProps: ComponentPropsModel(
+            text: 'text which should i see in app',
+          ),
+        ),
+      ];
+      final result = parseComponentList(text);
+      expect(result, componentModelList);
+    });
   });
 }

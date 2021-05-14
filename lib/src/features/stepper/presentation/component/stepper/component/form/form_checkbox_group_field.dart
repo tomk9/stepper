@@ -39,6 +39,9 @@ class _FormCheckboxGroupFieldState extends State<FormCheckboxGroupField> {
         ),
         for (final field in widget.fieldEntity.fields)
           CheckboxListTile(
+            key: Key(
+              '${FormCheckboxGroupFieldKey.checkboxListTile}_${field.label}',
+            ),
             value: _selectedValues.contains(
               field.label,
             ),
@@ -65,4 +68,8 @@ class _FormCheckboxGroupFieldState extends State<FormCheckboxGroupField> {
           ),
         );
   }
+}
+
+abstract class FormCheckboxGroupFieldKey {
+  static const checkboxListTile = 'CHECKBOX_LIST_TILE';
 }

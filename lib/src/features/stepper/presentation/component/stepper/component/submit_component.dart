@@ -20,6 +20,7 @@ class _SubmitComponentState extends State<SubmitComponent> {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
+        key: Key(SubmitComponentKey.submitButton),
         onPressed: _onSubmitPressed,
         child: Text('Submit'),
       ),
@@ -29,4 +30,8 @@ class _SubmitComponentState extends State<SubmitComponent> {
   void _onSubmitPressed() {
     context.read<StepperBloc>().add(const SubmittedStepperEvent());
   }
+}
+
+abstract class SubmitComponentKey {
+  static const submitButton = 'SUBMIT_BUTTON';
 }

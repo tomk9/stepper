@@ -19,12 +19,15 @@ class StaticComponent extends StatelessWidget {
       children: [
         const Expanded(
           child: Center(
-            child: FlutterLogo(),
+            child: FlutterLogo(
+              key: Key(StaticComponentKey.flutterLogo),
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 32.0),
           child: ForwardButton(
+            key: Key(StaticComponentKey.forwardButton),
             onPressed: _onPressed,
           ),
         ),
@@ -38,4 +41,9 @@ class StaticComponent extends StatelessWidget {
       curve: Curves.easeInOut,
     );
   }
+}
+
+abstract class StaticComponentKey {
+  static const flutterLogo = 'FLUTTER_LOGO';
+  static const forwardButton = 'FORWARD_BUTTON';
 }

@@ -83,6 +83,7 @@ class __FormFooterState extends State<_FormFooter> {
     return BlocBuilder<FormBuilderBloc, FormBuilderState>(
       builder: (context, state) {
         return ForwardButton(
+          key: Key(FormBuilderComponentKey.forwardButton),
           onPressed: state.ready ? _onPressed : null,
         );
       },
@@ -100,4 +101,8 @@ class __FormFooterState extends State<_FormFooter> {
       curve: Curves.easeInOut,
     );
   }
+}
+
+abstract class FormBuilderComponentKey {
+  static const forwardButton = 'FORWARD_BUTTON';
 }

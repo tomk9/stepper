@@ -45,6 +45,7 @@ class _FormTextFieldState extends State<FormTextField> {
           ],
         ),
         TextFormField(
+          key: Key(FormTextFieldKey.textFormField),
           controller: _textEditingController,
           onChanged: _onChanged,
         ),
@@ -63,4 +64,8 @@ class _FormTextFieldState extends State<FormTextField> {
           ),
         );
   }
+}
+
+abstract class FormTextFieldKey {
+  static const textFormField = 'TEXT_FORM_FIELD';
 }
